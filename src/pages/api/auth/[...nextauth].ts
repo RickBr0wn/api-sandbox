@@ -4,6 +4,7 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import prisma from '../../../lib/prismadb'
 import { AdapterUser } from 'next-auth/adapters'
 import { JWT } from 'next-auth/jwt'
+import _log from '~/components/_log'
 
 export const authOptions = {
 	adapter: PrismaAdapter(prisma),
@@ -23,6 +24,7 @@ export const authOptions = {
 			user: User | AdapterUser
 			token: JWT
 		}) {
+			session.admin = user.admin
 			return session
 		}
 	}

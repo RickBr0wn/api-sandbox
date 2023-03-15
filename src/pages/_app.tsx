@@ -2,13 +2,12 @@ import { SessionProvider } from 'next-auth/react'
 import type { AppType } from 'next/app'
 import HeadLayout from '~/components/head-layout'
 import { Session } from 'next-auth'
-import type { NextPage } from 'next'
+import '../styles/globals.css'
+
 // import type { GetStaticProps } from 'next'
 // import type { GetServerSideProps } from 'next'
 // import type { GetStaticPaths } from 'next'
 // import type { GetInitialProps } from 'next'
-
-interface AppProps {}
 
 const App: AppType<{ session: Session | null }> = ({
 	Component,
